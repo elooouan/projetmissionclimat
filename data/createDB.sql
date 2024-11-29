@@ -13,7 +13,6 @@ create table Regions (
     constraint pk_regions primary key (code_region)
 );
 
-DROP TABLE IF EXISTS Mesures;
 create table Mesures (
     code_departement TEXT,
     date_mesure DATE,
