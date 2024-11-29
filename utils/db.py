@@ -95,7 +95,7 @@ def insertDB():
 
         # On ajoute les mesures
         read_csv_file(
-            "data/csv/MesuresSmall.csv", ';',
+            "data/csv/Mesures.csv", ';',
             "insert into Mesures values (?, ?, ?, ?, ?)",
             ['code_insee_departement', 'date_obs', 'tmin', 'tmax', 'tmoy']
         )
@@ -103,8 +103,8 @@ def insertDB():
         # On ajoute les travaux
         read_csv_file(
             "data/csv/Chauffage.csv", ';',
-            "insert into Travaux (cout_total, cout_induit, annee_travaux, type_logement, annee_construction_logement) values (?, ?, ?, ?, ?)",
-            ['cout_total_ht', 'cout_induit_ht', 'annee_travaux', 'type_logement', 'annee_construction']
+            "insert into Travaux (code_departement, cout_total, cout_induit, annee_travaux, type_logement, annee_construction_logement) values (?, ?, ?, ?, ?, ?)",
+            ['code_departement', 'cout_total_ht', 'cout_induit_ht', 'annee_travaux', 'type_logement', 'annee_construction']
         )
 
         # On ajoute les chauffages

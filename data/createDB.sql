@@ -25,7 +25,7 @@ create table Mesures (
 
 --TODO Q4 Ajouter les créations des nouvelles tables
 
--- Communes Table
+-- Communes
 create table Commune (
     code_commune INTEGER,
     code_departement TEXT,
@@ -40,18 +40,19 @@ create table Commune (
     constraint fk_commune_departement foreign key (code_departement) references Departements(code_departement) ON DELETE CASCADE
 );
 
--- Travaux Table
+-- Travaux avec seulement code_departement
 create table Travaux (
     id_travaux INTEGER,
+    code_departement TEXT,
     cout_total FLOAT,
     cout_induit FLOAT,
     annee_travaux INTEGER,
     type_logement TEXT,
     annee_construction_logement INTEGER,
-    constraint pk_travaux primary key (id_travaux)
+    constraint pk_travaux primary key (id_travaux),
+    constraint fk_travaux foreign key (code_departement) references Departements(code_departement)
 );
 
--- Isolation Table
 create table Isolation (
     id_travaux INTEGER,
     poste_isolation TEXT,
@@ -62,7 +63,6 @@ create table Isolation (
     constraint fk_isolation_travaux foreign key (id_travaux) references Travaux(id_travaux) ON DELETE CASCADE
 );
 
--- Chauffage Table
 create table Chauffage (
     id_travaux INTEGER,
     energie_avant_travaux_chauffage TEXT,

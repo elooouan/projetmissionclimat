@@ -13,11 +13,7 @@ class Window(tk.Toplevel):
         ttk.Label(
             self,
             text=(
-                "Créer les tables manquantes, insérer les données correspondantes depuis les fichiers CSV "
-                "fournis et mettre à jour l'affichage de consultation de la BD.\n \n"
-                "Note : insérer les données peut être long à cause du grand nombre de mesures. Vous avez "
-                "à disposition un fichier MesuresSmall.csv qui ne contient que quelques données. Vous pouvez "
-                "l'utiliser le temps du développement pour faciliter les tests."
+                "On peut tester l'implementation des tableaux avec Delete, Create et Insert DB"
             ),
             wraplength=500,
             anchor="center",
