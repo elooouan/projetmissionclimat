@@ -89,9 +89,9 @@ class Window(tk.Toplevel):
         self.createTab(tab4, columns, query)
 
         # Travaux
-        columns = ('id_travaux', 'cout_total', 'cout_induit', 'annee_travaux', 'type_logement', 'annee_construction_logement')
+        columns = ('id_travaux', 'code_departement', 'cout_total', 'cout_induit', 'annee_travaux', 'type_logement', 'annee_construction_logement')
         query = """
-            SELECT id_travaux, cout_total, cout_induit, annee_travaux, type_logement, annee_construction_logement
+            SELECT id_travaux, code_departement, cout_total, cout_induit, annee_travaux, type_logement, annee_construction_logement
             FROM Travaux
             ORDER BY id_travaux
             """

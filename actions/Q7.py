@@ -69,6 +69,7 @@ class Window(tk.Toplevel):
         try:
             # Valider les champs
             id_travaux = self.validate_int(self.entries["ID Travaux"].get(), "ID Travaux")
+            code_departement = self.entries["Code Departement"].get().strip()
             cout_total = self.validate_float(self.entries["Coût Total"].get(), "Coût Total")
             cout_induit = self.validate_float(self.entries["Coût Induit"].get(), "Coût Induit")
             annee_travaux = self.validate_int(self.entries["Année Travaux"].get(), "Année Travaux")
@@ -77,11 +78,11 @@ class Window(tk.Toplevel):
 
             # Requête SQL pour insérer les données
             query = """
-            INSERT INTO Travaux (id_travaux, cout_total, cout_induit, annee_travaux, type_logement, annee_construction_logement)
-            VALUES (?, ?, ?, ?, ?, ?)
+                INSERT INTO Travaux (id_travaux, code_departement, cout_total, cout_induit, annee_travaux, type_logement, annee_construction_logement)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
             """
             cursor = db.data.cursor()
-            cursor.execute(query, (id_travaux, cout_total, cout_induit, annee_travaux, type_logement, annee_construction))
+            cursor.execute(query, (id_travaux, code_departement, cout_total, cout_induit, annee_travaux, type_logement, annee_construction))
             db.data.commit()
 
             self.loadTravaux()  # Rafraîchir les données affichées
@@ -112,6 +113,7 @@ class Window(tk.Toplevel):
         try:
             # Valider les champs
             id_travaux = self.validate_int(self.entries["ID Travaux"].get(), "ID Travaux")
+            code_departement = self.entries["Code Departement"].get().strip()
             cout_total = self.validate_float(self.entries["Coût Total"].get(), "Coût Total")
             cout_induit = self.validate_float(self.entries["Coût Induit"].get(), "Coût Induit")
             annee_travaux = self.validate_int(self.entries["Année Travaux"].get(), "Année Travaux")
@@ -126,11 +128,11 @@ class Window(tk.Toplevel):
 
             # Requête SQL pour mettre à jour les données
             query = """
-            UPDATE Travaux
-            SET cout_total = ?, cout_induit = ?, annee_travaux = ?, type_logement = ?, annee_construction_logement = ?
-            WHERE id_travaux = ?
+                UPDATE Travaux
+                SET code_departement = ?, cout_total = ?, cout_induit = ?, annee_travaux = ?, type_logement = ?, annee_construction_logement = ?
+                WHERE id_travaux = ?
             """
-            cursor.execute(query, (cout_total, cout_induit, annee_travaux, type_logement, annee_construction, id_travaux))
+            cursor.execute(query, (code_departement, cout_total, cout_induit, annee_travaux, type_logement, annee_construction, id_travaux))
             db.data.commit()
 
             self.loadTravaux()  # Rafraîchir les données affichées
