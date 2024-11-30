@@ -16,7 +16,7 @@ class Window(tk.Toplevel):
         # Section : Gérer les travaux
         frame_travaux = ttk.LabelFrame(self, text="Gérer les Travaux")
         frame_travaux.grid(row=0, column=0, sticky="nswe", padx=10, pady=10)
-        display.defineGridDisplay(frame_travaux, 8, 2)  # Adjusted to 8 rows for layout
+        display.defineGridDisplay(frame_travaux, 8, 2)
 
         # Ajout des labels et champs d'entrée
         labels = ["ID Travaux", "Code Departement", "Coût Total", "Coût Induit", "Année Travaux", "Type Logement", "Année Construction"]
@@ -30,7 +30,7 @@ class Window(tk.Toplevel):
 
         # Boutons pour les actions
         button_frame = ttk.Frame(frame_travaux)
-        button_frame.grid(row=7, column=0, columnspan=2, pady=10)  # Moved below all fields
+        button_frame.grid(row=7, column=0, columnspan=2, pady=10)
         ttk.Button(button_frame, text="Ajouter", command=self.ajouter_travaux).grid(row=0, column=0, padx=5)
         ttk.Button(button_frame, text="Modifier", command=self.modifier_travaux).grid(row=0, column=1, padx=5)
         ttk.Button(button_frame, text="Supprimer", command=self.supprimer_travaux).grid(row=0, column=2, padx=5)
