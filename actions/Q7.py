@@ -19,7 +19,7 @@ class Window(tk.Toplevel):
         display.defineGridDisplay(frame_travaux, 7, 2)
 
         # Ajout des labels et champs d'entrée
-        labels = ["ID Travaux", "Coût Total", "Coût Induit", "Année Travaux", "Type Logement", "Année Construction"]
+        labels = ["ID Travaux", "Code Departement", "Coût Total", "Coût Induit", "Année Travaux", "Type Logement", "Année Construction"]
         self.entries = {}
 
         for i, label_text in enumerate(labels):
