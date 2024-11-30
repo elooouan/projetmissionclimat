@@ -7,7 +7,7 @@ class Window(tk.Toplevel):
         super().__init__(parent)
 
         # Définir la taille et la position de la fenêtre
-        display.centerWindow(600,6400, self)
+        display.centerWindow(600,500, self)
         self.title("Gérer les travaux de rénovation")
 
         # Configuration de la grille
@@ -16,7 +16,7 @@ class Window(tk.Toplevel):
         # Section : Gérer les travaux
         frame_travaux = ttk.LabelFrame(self, text="Gérer les Travaux")
         frame_travaux.grid(row=0, column=0, sticky="nswe", padx=10, pady=10)
-        display.defineGridDisplay(frame_travaux, 7, 2)
+        display.defineGridDisplay(frame_travaux, 8, 2)  # Adjusted to 8 rows for layout
 
         # Ajout des labels et champs d'entrée
         labels = ["ID Travaux", "Code Departement", "Coût Total", "Coût Induit", "Année Travaux", "Type Logement", "Année Construction"]
@@ -30,10 +30,11 @@ class Window(tk.Toplevel):
 
         # Boutons pour les actions
         button_frame = ttk.Frame(frame_travaux)
-        button_frame.grid(row=6, column=0, columnspan=2, pady=10)
+        button_frame.grid(row=7, column=0, columnspan=2, pady=10)  # Moved below all fields
         ttk.Button(button_frame, text="Ajouter", command=self.ajouter_travaux).grid(row=0, column=0, padx=5)
         ttk.Button(button_frame, text="Modifier", command=self.modifier_travaux).grid(row=0, column=1, padx=5)
         ttk.Button(button_frame, text="Supprimer", command=self.supprimer_travaux).grid(row=0, column=2, padx=5)
+
 
         # Section : Affichage des travaux existants
         tree_frame = ttk.Frame(self)
