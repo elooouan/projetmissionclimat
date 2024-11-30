@@ -7,7 +7,7 @@ class Window(tk.Toplevel):
         super().__init__(parent)
 
         # Définir la taille et la position de la fenêtre
-        display.centerWindow(600, 400, self)
+        display.centerWindow(600,6400, self)
         self.title("Gérer les travaux de rénovation")
 
         # Configuration de la grille
