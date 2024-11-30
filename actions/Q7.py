@@ -40,7 +40,7 @@ class Window(tk.Toplevel):
         tree_frame.grid(row=1, column=0, sticky="nswe", padx=10, pady=10)
         display.defineGridDisplay(tree_frame, 1, 1)
 
-        columns = ("ID Travaux", "Coût Total", "Coût Induit", "Année Travaux", "Type Logement", "Année Construction")
+        columns = ("ID Travaux", "Code Departement", "Coût Total", "Coût Induit", "Année Travaux", "Type Logement", "Année Construction")
         self.tree = ttk.Treeview(tree_frame, columns=columns, show="headings")
         for column in columns:
             self.tree.heading(column, text=column)

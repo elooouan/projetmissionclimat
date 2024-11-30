@@ -16,7 +16,7 @@ class Window(tk.Toplevel):
         # On définit les colonnes que l'on souhaite afficher dans la fenêtre et la requête
         columns = ('code_departement', 'nom_departement')
         query = """SELECT code_departement, nom_departement
-                    FROM Departements JOIN Mesures USING (code_departement) 
+                    FROM Departements
                     WHERE zone_climatique = 'H1'
                 """
 
