@@ -29,7 +29,6 @@ class Window(tk.Toplevel):
                         FROM Departements JOIN Mesures USING (code_departement)
                         GROUP BY zone_climatique, nom_departement
                     )
-                    -- Trouver la température moyenne maximale
                     SELECT zone_climatique, nom_departement, MAX(temperature_moyenne) AS temperature_moyenne_max
                     FROM TempMoy
                     GROUP BY zone_climatique"""
